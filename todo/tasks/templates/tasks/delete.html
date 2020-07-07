@@ -1,5 +1,4 @@
 
-
 <link rel="stylesheet"
 href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -33,13 +32,14 @@ crossorigin="anonymous">
 		border-color: #e59400;
 	}
 </style>
+
 <div class="center-column">
-    <center><h3>Update Task</h3></center>
+    <p>Are you sure you want to delete {{item}}?</p>
 
-    <form method="POST" action="">
+    <a class="btn btn-sm btn-info" href="{% url 'list' %}">Cancel</a>
+
+    <form method="post" action="">
         {% csrf_token %}
-
-        {{form}}
-        <input class="btn btn-danger" type="submit" name="Update Task">
+        <input class="btn btn-sm btn-danger" type="submit" name="Confirm" value="Confirm">
     </form>
 </div>
